@@ -59,6 +59,8 @@ $secondary: rgb(49, 49, 49);
 $light: rgb(190, 190, 190);
 $highlight: rgb(255, 255, 255);
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -142,6 +144,10 @@ p {
   max-width: 500px;
 }
 
+.cta-button:focus, .cta-button:focus-within {
+  outline: none;
+}
+
 #app {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -150,4 +156,20 @@ p {
   color: $secondary;
   font-size: 16px;
 }
+
+.bm-burger-bars {
+  background-color: $light;
+}
+
+.bm-burger-button {
+  top: 20px;
+  right: 20px !important;
+  margin: 0;
+  padding: 0;
+}
+
+.bm-menu {
+  background-color: $secondary;
+}
+
 </style>

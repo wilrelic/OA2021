@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <h1>CONTACT US</h1>
-        <h3>Have any questions? Feel free to get in touch and someone will get back to you as soon as possible.</h3>
+        <!-- <h1>CONTACT US</h1>
+        <h3>Have any questions? Feel free to get in touch and someone will get back to you as soon as possible.</h3> -->
         <form class="contact-form" @submit.prevent="sendEmail">
             <label>Name</label>
             <input type="text" name="user_name" v-model="custName" autocomplete="off">
@@ -42,7 +42,7 @@ export default {
                     console.log('SUCCESS!', result.status, result.text);
                     document.querySelector('#thanksText').style.display="flex";
                     document.querySelector('.spin').style.display="none";
-                    
+
                 }, (error) => {
                     console.log('FAILED...', error);
                 });
@@ -58,11 +58,11 @@ export default {
     $highlight: rgb(255, 255, 255);
 
     h1 {
-        font-size: xx-large;
+        font-size: large;
     }
 
     h3 {
-        font-size: large;
+        font-size: smaller;
     }
 
     .spin {
@@ -78,8 +78,9 @@ export default {
     }
 
     .container {
+        display: flex;
+        flex-direction: columns;
         color: $light;
-        width: 100%;
         margin: 0 auto;
         max-width: 500px;
         background: rgba($color: #000000, $alpha: .5);

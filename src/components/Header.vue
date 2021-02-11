@@ -7,7 +7,7 @@
       <img alt="OA Logo" src="../assets/imgs/logo.png" />
       <p class="logo-tagline">MORE CARS | MORE CHOICE</p>
     </router-link>
-      <Slide right>
+      <Slide right :closeOnNavigation="true">
           <router-link to="Inventory"> 
               <span class="nav-links">Browse Inventory</span> 
           </router-link>
@@ -35,7 +35,7 @@ import { Slide } from "vue-burger-menu";
 export default {
   name: "Header",
   components: {
-    Slide
+    Slide,
   }
 };
 </script>
@@ -80,21 +80,7 @@ a {
 
 .logo-tagline {
   color: $primary;
-  text-align: center;
-  
-}
-
-.nav-button {
-  display: none;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  color: $light;
-
-  :hover {
-    color: $primary;
-  }
+  text-align: center;  
 }
 
 .search-button {
