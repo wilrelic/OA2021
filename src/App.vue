@@ -59,6 +59,8 @@ $secondary: rgb(49, 49, 49);
 $light: rgb(190, 190, 190);
 $highlight: rgb(255, 255, 255);
 
+$lightOp: rgba(190, 190, 190, 0.7);
+$highlightOp: rgba(255, 255, 255, 0.7);
 
 
 * {
@@ -114,6 +116,15 @@ h5 {
   margin: 10px 0px;
 }
 
+a {
+  color: $secondary;
+  text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+  }
+
 button a {
   text-decoration: none;
   color: $highlight;
@@ -127,6 +138,16 @@ p {
 
 .orangeText {
   color: $primary;
+}
+
+.container {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  background-image: linear-gradient(to bottom right, $highlightOp, $lightOp, $highlightOp),
+  url("./assets/imgs/bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 20px 20px 20px 20px;
 }
 
 .cta-button {

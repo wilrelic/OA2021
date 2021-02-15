@@ -1,5 +1,5 @@
 <template>
-  <div class="home-wrapper">
+  <div class="container">
     <div class="titles-wrapper"> <!-- PAGE 1 WRAPPER -->
       <div class="titles">
         <h4>{{ locations }}</h4>
@@ -70,17 +70,6 @@ $secondary: rgb(49, 49, 49);
 $light: rgb(190, 190, 190);
 $highlight: rgb(255, 255, 255);
 
-$lightOp: rgba(190, 190, 190, 0.7);
-$highlightOp: rgba(255, 255, 255, 0.7);
-
-.home-wrapper {
-  height: 100%;
-  background-image: linear-gradient(to bottom right, $highlightOp, $lightOp, $highlightOp),
-  url("../assets/imgs/bg.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 120px 20px 20px 20px;
-}
 
 #search-icon {
   margin: 0px 4px;

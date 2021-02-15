@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Finance from "../views/Finance.vue";
+import Inventory from "../views/Inventory.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
     path: "/Finance",
     name: "Finance",
     component: Finance
+  },
+  {
+    path: "/Inventory",
+    name: "Inventory",
+    component: Inventory
   }
   // {
   //   path: "/about",

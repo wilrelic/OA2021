@@ -98,6 +98,10 @@ h3 {
     text-shadow: 2px 2px 2px rgb(36, 36, 36);
 }
 
+input {
+    border: 1px solid transparent;
+}
+
 input:focus, input:focus-within {
     outline: none;
     border: 1px solid $primary;
