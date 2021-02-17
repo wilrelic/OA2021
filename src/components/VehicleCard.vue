@@ -6,7 +6,7 @@
             {{ car.Make }}
             {{ car.Model }}
         </span>
-        <span class="card-price">${{ Math.ceil(car.Price) }}</span>
+        <span class="card-price">${{ addCommas(Math.ceil(car.Price)) }}</span>
     </div>
     <div class="hero-image">
         <img :src="'/stock/images/' + car.StockNumber + '_1.jpg'" width="100%" />
@@ -33,7 +33,20 @@
 <script>
 export default {
     name: "VehicleCard",
-    props: ['car']
+    props: ['car'],
+    methods: {
+        addCommas(nStr){
+            nStr += '';
+            var x = nStr.split('.');
+            var x1 = x[0];
+            var x2 = x.length > 1 ? '.' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        }
+            return x1 + x2;
+        }
+    }
 }
 </script>
 
