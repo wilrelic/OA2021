@@ -3,10 +3,10 @@
         <div class="fin-grid">
             <div class="fin-spiel">
                 <h1>Financing with <em>ORANGE</em> <span class="greyTitleText">AUTOS</span></h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quam consequuntur pariatur autem nostrum qui tempora illo maxime voluptatum architecto itaque iusto quo ex error possimus labore accusamus? Accusamus, eum.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quam consequuntur pariatur autem nostrum qui tempora illo maxime voluptatum architecto itaque iusto quo ex error possimus labore accusamus? Accusamus, eum.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quam consequuntur pariatur autem nostrum qui tempora illo maxime voluptatum architecto itaque iusto quo ex error possimus labore accusamus? Accusamus, eum.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quam consequuntur pariatur autem nostrum qui tempora illo maxime voluptatum architecto itaque iusto quo ex error possimus labore accusamus? Accusamus, eum.</p>
+                <p>At <strong>ORANGE <em>Autos</em></strong> we are dedicated to ensuring that our customers have everything they need to be happy in their new car. This includes making sure that they have the best experience when paying for it. That is why we use <a href="https://www.loansunlimited.com.au/"><strong>Loans Unlimited</strong></a> for all of our Finance needs.</p>
+                <p>Loans Unlimited is Perth’s ultimate source for different types of loans, including car, personal, and commercial finance. They are a customer-centric business whose mission is simple: to help their customers find the perfect loan.</p>
+                <p>With a combined industry experience of 25 years, they have amassed the necessary knowledge, which they believe is beneficial for their company and their customers.</p>
+                <p>They take the time to learn more about lenders and their products. Then, they discover more about you. Armed with the information they need, it allows them to provide you with the top options no matter how unique your situation may be.</p>
                 <div class="loans">
                     <a href="https://www.loansunlimited.com.au" target="_blank"><img src="../assets/imgs/loans-unlimited-logo.png" /></a>
                     <p id="loans-spiel">All of our finance options are provided by our on-site broker <strong><a href="https://www.loandsunlimited.com.au" target="_blank">Loans Unlimited.</a></strong></p>

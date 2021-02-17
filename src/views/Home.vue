@@ -79,6 +79,10 @@ $highlight: rgb(255, 255, 255);
   grid-area: home-copy;
 }
 
+.titles-wrapper {
+  margin-top: 120px;
+}
+
 @media screen and (min-width: 960px) {
   .content-grid {
     display: grid;
@@ -107,6 +111,7 @@ $highlight: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0;
   }
 
   .home-copy p {

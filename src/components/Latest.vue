@@ -26,7 +26,7 @@ export default {
     .then(response => response.text())
     .then(data => this.$papa.parse(data.trim(), {header: true}))
     .then(parsedData => {
-      this.cars = parsedData.data      
+      this.cars = parsedData.data    
     })
   }
 };
