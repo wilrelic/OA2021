@@ -38,6 +38,8 @@ export default {
     $highlight: rgb(255, 255, 255);
 
     .card-grid {
+        display: flex;
+        flex-wrap: wrap;
         margin-top: 120px;
     }
 </style>

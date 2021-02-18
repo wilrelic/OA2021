@@ -6,8 +6,10 @@
         <h1>{{ title }}</h1>
         <h2>{{ subtitle }}</h2>
         <button class="cta-button">
-          <i class="fa fa-search" id="search-icon" aria-hidden="true"></i>SEARCH
+          <router-link to="Inventory">
+            <i class="fa fa-search" id="search-icon" aria-hidden="true"></i>SEARCH
           NOW
+          </router-link>
         </button>
       </div>
     </div>

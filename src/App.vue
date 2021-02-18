@@ -13,11 +13,6 @@ export default {
   components: {
     Header,
     Footer
-  },
-  data() {
-    return {
-      cars: []
-    }
   }
 };
 </script>
@@ -122,7 +117,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 
 button a {
@@ -182,15 +177,26 @@ p {
   background-color: $light;
 }
 
+.bm-burger-button:hover {
+  background-color: $primary;
+}
+
 .bm-burger-button {
   top: 20px;
   right: 20px !important;
   margin: 0;
   padding: 0;
+  width: 22px;
+  height: 16px;
 }
 
 .bm-menu {
   background-color: $secondary;
+}
+
+.cross-style {
+  top: 4px;
+  right: 4px !important;
 }
 
 </style>

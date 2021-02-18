@@ -64,7 +64,7 @@ h3 {
     width: 100%;
     margin: 0 auto;
     max-width: 500px;
-    background: rgba($color: #000000, $alpha: .5);
+    background: rgba($color: #000000, $alpha: .6);
     height: 65vh;
     margin-top: 20px;
     border-radius: 4px;

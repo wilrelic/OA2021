@@ -12,15 +12,22 @@
         <img :src="'/stock/images/' + car.StockNumber + '_1.jpg'" width="100%" />
     </div>
     <div class="card-bullet-wrapper">
-        <ul class="bullets">
-            <li><strong>Color:</strong> {{ car.Color }}</li>
-            <li><strong>Trans:</strong> {{ car.GearType}}</li>
-            <li><strong>KMs:</strong> {{ car.Odometer }}</li>
-            <li><strong>Seats:</strong> {{ car.Seats }}</li>
-            <li><strong>Fuel Type:</strong> {{ car.FuelType }}</li>
-            <li><strong>Cyl:</strong> {{ car.Cylinders }}</li>
-            <li><strong>Body:</strong> {{ car.Body }}</li>
-        </ul>
+        <dl class="bullets">
+            <dt><strong>Color:</strong></dt> 
+            <dd>{{ car.Color }}</dd>
+            <dt><strong>Trans:</strong></dt>
+            <dd>{{ car.GearType}}</dd>
+            <dt><strong>KMs:</strong></dt>
+            <dd>{{ addCommas(car.Odometer) }}</dd>
+            <dt><strong>Seats:</strong></dt>
+            <dd>{{ car.Seats }}</dd>
+            <dt><strong>Fuel Type:</strong></dt>
+            <dd>{{ car.FuelType }}</dd>
+            <dt><strong>Cyl:</strong></dt>
+            <dd>{{ car.Cylinders }}</dd>
+            <dt><strong>Body:</strong></dt>
+            <dd>{{ car.Body }}</dd>
+        </dl>
     </div>
     <div class="read-more">
         <button class="cta-button">
@@ -61,8 +68,8 @@ export default {
         color: $light;
         margin: 0 auto;
         margin-bottom: 10px;
-        max-width: 500px;
-        background: rgba($color: #000000, $alpha: .5);
+        max-width: 400px;
+        background: rgba($color: #000000, $alpha: .6);
         border-radius: 4px;
         box-shadow: 2px 2px 2px grey;
         border: 1px solid $primary;
@@ -78,16 +85,54 @@ export default {
         color: $primary;
         padding: 10px;
         font-weight: 600;
+        text-shadow: 1px 1px $secondary;
     }
 
     .card-price {
         font-size: 1.5em;
         font-weight: 600;
         padding-bottom: 10px;
+        text-shadow: 1px 1px $secondary;
     }
 
     img {
         width: 100%;
         border-radius: 4px;
+        border: 1px solid $primary;
+        box-shadow: 0px 0px 1px $secondary;
+    }
+
+    .card-bullet-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    dl.bullets {
+        float: left;
+        width: 100%;
+        margin: 1em 0;
+        padding: 0;
+        border-bottom: 1px solid #999;
+    }
+
+    .bullets dt {
+        clear: left;
+        float: left;
+        width: 40%;
+        margin: 0;
+        padding: 5px;
+        border-top: 1px solid #999;
+        font-weight: bold;
+        text-align: right;
+    }
+
+    .bullets dd {
+        float: left;
+        width: 60%;
+        margin: 0;
+        padding: 5px;
+        border-top: 1px solid #999;
+        text-align: left;
     }
 </style>

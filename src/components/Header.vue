@@ -1,30 +1,32 @@
 <template>
   <div class="top-bar">
     <div class="search-button">
-      <i class="fa fa-search fa-3x" id="search-icon" aria-hidden="true"></i>
+      <router-link to="Inventory">
+        <i class="fa fa-search fa-2x" id="search-icon" aria-hidden="true"></i>
+      </router-link>
     </div>
     <router-link to="/">  
       <img alt="OA Logo" src="../assets/imgs/logo.png" />
       <p class="logo-tagline">MORE CARS | MORE CHOICE</p>
     </router-link>
-      <Slide right :closeOnNavigation="true">
+      <Slide right :closeOnNavigation="true" width="420" noOverlay>
           <router-link to="Inventory"> 
-              <span class="nav-links">Browse Inventory</span> 
+              <span class="nav-links"><i class="fa fa-search fa-1x" aria-hidden="true"></i> Browse Inventory</span> 
           </router-link>
           <router-link to="Finance"> 
-              <span class="nav-links">Finance Options</span>  
+              <span class="nav-links"><i class="fas fa-money-bill-wave"></i> Finance Options</span>  
           </router-link>
           <router-link to="Warranty"> 
-              <span class="nav-links">Warranty Plans</span> 
+              <span class="nav-links"><i class="fa fa-certificate" aria-hidden="true"></i> Warranty Plans</span> 
           </router-link>
           <router-link to="Aftercare"> 
-              <span class="nav-links">Aftercare</span>
+              <span class="nav-links"><i class="fas fa-hand-holding-medical"></i> Aftercare</span>
           </router-link>
           <router-link to="Careers"> 
-              <span class="nav-links">Careers</span> 
+              <span class="nav-links"><i class="fas fa-handshake"></i> Careers</span> 
           </router-link>
           <router-link to="Locations"> 
-              <span class="nav-links">Locations</span> 
+              <span class="nav-links"><i class="fas fa-map-marker-alt"></i> Locations</span> 
           </router-link>
       </Slide>
   </div>
@@ -47,7 +49,8 @@ $light: rgb(190, 190, 190);
 $highlight: rgb(255, 255, 255);
 
 a {
-  text-decoration: none;
+  color: $light;
+  text-decoration: none !important;
 }
 
 .nav-links {
@@ -88,7 +91,6 @@ a {
   top: 20px;
   left: 20px;
   cursor: pointer;
-  color: $light;
 
   :hover {
     color: $primary;
