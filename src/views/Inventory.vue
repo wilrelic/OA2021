@@ -1,19 +1,21 @@
 <template>
     <div class="container">
         <div class="search-bar-container">
-            <div class="search-wrapper">
-            <div class="button-wrap">
-                <input type="text" placeholder="Search here..." v-model="searchInput" />
-                <button class="cta-button"><i class="fa fa-search fa-1x" id="search-icon" aria-hidden="true"></i></button>
+            <div class="text-input-wrap">
+                <input type="text" placeholder="Search here... (eg. Commodore, Falcon etc.)" v-model="searchInput" />
             </div>
-            <select>
-                <option disabled value="">Sort by Brand...</option>
-                <option v-for="car in cars" :key="car.StockNumber" :value="car.Make.value">{{ car.Make }}</option>
-            </select>
-        </div>
+            <div class="select-wrap">
+                <select>
+                    <option disabled selected :value="null">Sort by...</option>
+                    <option v-for="filter in filters" :key="filter.ID" :value="filter.ID">{{ filter.type }}</option>
+                </select>
+                <button class="price-toggle">
+                    <i class="fa fa-sort" aria-hidden="true"></i>
+                </button>
+            </div>
         </div>
         <div class="card-grid">
-            <VehicleCard v-for="car in filterBy(cars, this.searchInput)" :key="car.Stocknumber" :car="car" />
+            <VehicleCard v-for="car in filterBy(cars, searchInput)" :key="car.Stocknumber" :car="car" />
         </div>
     </div>
 </template>
@@ -30,10 +32,14 @@ export default {
     data() {
         return {
             cars: '',
-            searchInput: '',
-            filter: '',
             car: '',
-            makes: ''
+            filters: [
+                {type: 'Price', ID: 0},
+                {type: 'Make', ID: 1},
+                {type: 'Year', ID: 2},
+            ],
+            filter: '',
+            searchInput: '',
         }
     },
     created: function() {
@@ -43,14 +49,9 @@ export default {
         .then(data => this.$papa.parse(data.trim(), {header: true}))
         .then(parsedData => {
         this.cars = parsedData.data
-        console.log(this.cars)
         })
+
     },
-    methods: {
-        getFilterType() {
-            console.log(this.filter)
-        }
-    }
 }
 </script>
 
@@ -61,6 +62,9 @@ export default {
     $highlight: rgb(255, 255, 255);
 
     .search-bar-container {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
         margin-top: 100px;
     }
 
@@ -70,12 +74,12 @@ export default {
         margin-top: 10px;
     }
 
-    .search-wrapper {
-        width: 100%;
+    .text-input-wrap {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-bottom: 10px;
+        position: relative;
     }
 
     input {
@@ -84,16 +88,27 @@ export default {
         outline: none;
         border: 1px solid #363636;
         padding: 0px 10px;
-        flex: 3;
+        border-radius: 40px;
+        background: rgba($color: #363636, $alpha: 0.3);
+        color: $secondary;
+        flex: 1;
+        max-width: 400px;
+        position: relative;
     }
 
     option:focus, select:focus, input:focus-within, input:focus {
         border: 1px solid $primary;
     }
 
-    select {
+    .select-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
         width: 100%;
-        max-width: 400px;
+    }
+
+    select {
         height: 40px;
         padding: 0px 10px;
         border: 0;
@@ -102,6 +117,19 @@ export default {
         color: $primary;
         text-shadow: 1px 1px #363636;
         border-radius: 4px;
+        border: 1px solid transparent;
+    }
+
+    .price-toggle {
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        border: 0;
+        outline: none;
+        background: rgba($color: #363636, $alpha: 1.0);
+        color: $primary;
+        text-shadow: 1px 1px #363636;
+        cursor: pointer;
     }
 
     option {
@@ -110,18 +138,21 @@ export default {
 
     .button-wrap {
         display: flex;
-        width: 100%;
-        max-width: 400px;
-        justify-content: center;
-        align-items: center;
         margin-bottom: 10px;
-        gap: 6px;
+        position: relative;
+        align-items: center;
     }
 
     .cta-button {
-        max-width: 400px;
-        height: 40px;
+        width: 34px;
+        height: 34px;
         margin: 0;
-        flex: 1;
+        border-radius: 50%;
+        background-color: $light;
+        box-shadow: none;
+    }
+
+    #inner-search-icon {
+        color: $secondary;
     }
 </style>

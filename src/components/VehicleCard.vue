@@ -6,7 +6,7 @@
             {{ car.Make }}
             {{ car.Model }}
         </span>
-        <span class="card-price">${{ addCommas(Math.ceil(car.Price)) }}</span>
+        <span class="card-price">{{ this.$options.filters.currency(car.Price) }}</span>
     </div>
     <div class="hero-image">
         <img :src="'/stock/images/' + car.StockNumber + '_1.jpg'" width="100%" />
@@ -43,6 +43,7 @@ export default {
     props: ['car'],
     methods: {
         addCommas(nStr){
+            nStr;
             nStr += '';
             var x = nStr.split('.');
             var x1 = x[0];
