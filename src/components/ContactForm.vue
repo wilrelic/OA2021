@@ -1,7 +1,5 @@
 <template>
     <div class="container">
-        <!-- <h1>CONTACT US</h1>
-        <h3>Have any questions? Feel free to get in touch and someone will get back to you as soon as possible.</h3> -->
         <form class="contact-form" @submit.prevent="sendEmail">
             <label>Name</label>
             <input type="text" name="user_name" v-model="custName" autocomplete="off">
@@ -35,9 +33,13 @@ export default {
     },
     methods: {
         sendEmail: (e) => {
-            document.querySelector('#sendText').style.display="none";
-            document.querySelector('.spin').style.display="flex";
-            emailjs.sendForm('oa_form_mail', 'OA_Template', e.target, 'user_FspPAaPOMGXLWrCTunqwL')
+            if (this.$data.custName == '' || this.$data.custEmail == '' || this.custMessage == '') {
+                console.log('Nope Nope Nope');
+                return alert('Please Enter Valid Details and Try Again');
+            } else {
+                document.querySelector('#sendText').style.display="none";
+                document.querySelector('.spin').style.display="flex";
+                emailjs.sendForm('oa_form_mail', 'OA_Template', e.target, 'user_FspPAaPOMGXLWrCTunqwL')
                 .then((result) => {
                     console.log('SUCCESS!', result.status, result.text);
                     document.querySelector('#thanksText').style.display="flex";
@@ -46,6 +48,7 @@ export default {
                 }, (error) => {
                     console.log('FAILED...', error);
                 });
+            }
         }    
     }
 }
@@ -79,13 +82,12 @@ export default {
 
     .container {
         display: flex;
-        flex-direction: columns;
+        flex-direction: column;
+        width: 100%;
         color: $light;
-        margin: 0 auto;
-        max-width: 500px;
+        margin: auto;
+        max-width: 300px;
         background: rgba($color: #000000, $alpha: .5);
-        height: auto;
-        margin-top: 20px;
         border-radius: 4px;
         box-shadow: 2px 2px 2px grey;
         border: 1px solid $primary;
@@ -95,7 +97,6 @@ export default {
     .contact-form {
         display: flex;
         flex-direction: column;
-        width: 100%;
     }
 
     input, textarea {

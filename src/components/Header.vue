@@ -26,7 +26,7 @@
               <span class="nav-links"><i class="fas fa-handshake"></i> Careers</span> 
           </router-link>
           <router-link to="Locations"> 
-              <span class="nav-links"><i class="fas fa-map-marker-alt"></i> Locations</span> 
+              <span class="nav-links"><i class="fas fa-map-marker-alt"></i> Locations</span>
           </router-link>
       </Slide>
   </div>
@@ -37,7 +37,7 @@ import { Slide } from "vue-burger-menu";
 export default {
   name: "Header",
   components: {
-    Slide,
+    Slide
   }
 };
 </script>

@@ -3,7 +3,7 @@
     <div class="card-header">
         <span class="card-title">
             {{ car.Year }}
-            {{ car.Make }}
+            {{ car.Make }}<br/>
             {{ car.Model }}
         </span>
         <span class="card-price">{{ car.Price | currency('$', 0) }}</span>
@@ -135,5 +135,11 @@ export default {
         padding: 5px;
         border-top: 1px solid #999;
         text-align: left;
+    }
+
+    @media screen and (min-width: 768px) {
+        .card-wrapper {
+            max-width: 300px;
+        }
     }
 </style>
