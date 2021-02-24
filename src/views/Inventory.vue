@@ -5,17 +5,14 @@
                 <input type="text" placeholder="Search here... (eg. Commodore, Falcon etc.)" v-model="searchInput" />
             </div>
             <div class="select-wrap">
-                <select>
-                    <option disabled selected :value="null">Sort by...</option>
-                    <option v-for="filter in filters" :key="filter.ID" :value="filter.ID">{{ filter.type }}</option>
+                <select v-model="filter" @change="filteredCars">
+                    <option v-for="filter in filterTypes" :key="filter.ID" :value="filter.ID">{{ filter.type }}</option>
                 </select>
-                <button class="price-toggle">
-                    <i class="fa fa-sort" aria-hidden="true"></i>
-                </button>
             </div>
         </div>
+        
         <div class="card-grid">
-            <VehicleCard v-for="car in filterBy(cars, searchInput)" :key="car.Stocknumber" :car="car" />
+            <VehicleCard v-for="car in filterBy(filteredCars, searchInput)" :key="car.Stocknumber" :car="car" />
         </div>
     </div>
 </template>
@@ -33,12 +30,13 @@ export default {
         return {
             cars: '',
             car: '',
-            filters: [
-                {type: 'Price', ID: 0},
-                {type: 'Make', ID: 1},
-                {type: 'Year', ID: 2},
+            filterTypes: [
+                {type: 'Price (Low to High)', ID: 0},
+                {type: 'Price (High to Low)', ID: 1},
+                {type: 'Make', ID: 2},
+                {type: 'Year', ID: 3},
             ],
-            filter: '',
+            filter: 0,
             searchInput: '',
         }
     },
@@ -52,6 +50,21 @@ export default {
         })
 
     },
+    computed: {
+        filteredCars() {
+                if (this.filter == 0) {
+                    return this.orderBy(this.cars, 'Price');
+                } else if (this.filter == 1) {
+                    return this.orderBy(this.cars, 'Price', -1);
+                } else if (this.filter == 2) {
+                    return this.orderBy(this.cars, 'Make');
+                } else if (this.filter == 3) {
+                    return this.orderBy(this.cars, 'Year');
+                } else {
+                    return this.cars
+                }
+        },
+    }
 }
 </script>
 
@@ -66,6 +79,7 @@ export default {
         flex-direction: column;
         margin: auto;
         margin-top: 100px;
+        max-width: 400px;
     }
 
     .card-grid {
@@ -106,6 +120,7 @@ export default {
         align-items: center;
         gap: 4px;
         width: 100%;
+        max-width: 400px;
     }
 
     select {
@@ -118,6 +133,7 @@ export default {
         text-shadow: 1px 1px #363636;
         border-radius: 4px;
         border: 1px solid transparent;
+        flex: 1;
     }
 
     .price-toggle {
@@ -130,6 +146,10 @@ export default {
         color: $primary;
         text-shadow: 1px 1px #363636;
         cursor: pointer;
+    }
+
+    .price-toggle:focus {
+        border: 1px solid $primary;
     }
 
     option {

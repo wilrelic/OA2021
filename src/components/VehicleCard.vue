@@ -6,7 +6,7 @@
             {{ car.Make }}
             {{ car.Model }}
         </span>
-        <span class="card-price">{{ this.$options.filters.currency(car.Price) }}</span>
+        <span class="card-price">{{ car.Price | currency('$', 0) }}</span>
     </div>
     <div class="hero-image">
         <img :src="'/stock/images/' + car.StockNumber + '_1.jpg'" width="100%" />
