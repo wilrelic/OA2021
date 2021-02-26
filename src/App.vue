@@ -73,6 +73,7 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  font-size: 1em;
 }
 
 h1 {
@@ -129,6 +130,7 @@ p {
   margin: 10px 0px;
   text-align: justify;
   font-size: 0.8rem;
+  line-height: 1.4em;
 }
 
 .orangeText {

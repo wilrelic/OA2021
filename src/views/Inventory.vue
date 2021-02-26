@@ -113,7 +113,7 @@ export default {
 
     #search-icon {
         position: absolute;
-        left: 4px;
+        left: 6px;
     }
 
     option:focus, select:focus, input:focus-within, input:focus {
