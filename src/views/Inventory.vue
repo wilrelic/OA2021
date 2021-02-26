@@ -2,7 +2,8 @@
     <div class="container">
         <div class="search-bar-container">
             <div class="text-input-wrap">
-                <input type="text" placeholder="Search here... (eg. Commodore, Falcon etc.)" v-model="searchInput" />
+                <input type="text" id="search-bar" placeholder="Search here... (eg. Commodore, Ford, V8, 14990 etc.)" v-model="searchInput" />
+                <i class="fa fa-search fa-2x" id="search-icon" aria-hidden="true"></i>
             </div>
             <div class="select-wrap">
                 <select v-model="filter" @change="filteredCars">
@@ -101,13 +102,18 @@ export default {
         border-radius: 4px;
         outline: none;
         border: 1px solid #363636;
-        padding: 0px 10px;
+        padding: 0px 40px;
         border-radius: 40px;
         background: rgba($color: #363636, $alpha: 0.3);
         color: $secondary;
         flex: 1;
         max-width: 400px;
-        position: relative;
+        font-size: 1em;
+    }
+
+    #search-icon {
+        position: absolute;
+        left: 4px;
     }
 
     option:focus, select:focus, input:focus-within, input:focus {
@@ -134,6 +140,7 @@ export default {
         border-radius: 4px;
         border: 1px solid transparent;
         flex: 1;
+        font-size: 1em;
     }
 
     .price-toggle {

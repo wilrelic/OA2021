@@ -65,12 +65,13 @@ h3 {
     margin: 0 auto;
     max-width: 500px;
     background: rgba($color: #000000, $alpha: .6);
-    height: 65vh;
+    height: auto;
     margin-top: 20px;
     border-radius: 4px;
     box-shadow: 2px 2px 2px grey;
     border: 1px solid $primary;
     padding: 0px 10px;
+    padding-bottom: 20px;
 }
 
 #finCalc {

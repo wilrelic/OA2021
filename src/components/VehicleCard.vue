@@ -19,8 +19,6 @@
             <dd>{{ car.GearType}}</dd>
             <dt><strong>KMs:</strong></dt>
             <dd>{{ addCommas(car.Odometer) }}</dd>
-            <dt><strong>Seats:</strong></dt>
-            <dd>{{ car.Seats }}</dd>
             <dt><strong>Fuel Type:</strong></dt>
             <dd>{{ car.FuelType }}</dd>
             <dt><strong>Cyl:</strong></dt>
