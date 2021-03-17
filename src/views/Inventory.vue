@@ -41,7 +41,7 @@ export default {
             searchInput: '',
         }
     },
-    created: function() {
+    mounted() {
 
         fetch('stock/TestCSVFeed.csv')
         .then(response => response.text())
@@ -53,13 +53,14 @@ export default {
     },
     computed: {
         filteredCars() {
-                if (this.filter == 0) {
+            console.log(this.cars)
+                if (this.filter === 0) {
                     return this.orderBy(this.cars, 'Price');
-                } else if (this.filter == 1) {
+                } else if (this.filter === 1) {
                     return this.orderBy(this.cars, 'Price', -1);
-                } else if (this.filter == 2) {
+                } else if (this.filter === 2) {
                     return this.orderBy(this.cars, 'Make');
-                } else if (this.filter == 3) {
+                } else if (this.filter === 3) {
                     return this.orderBy(this.cars, 'Year');
                 } else {
                     return this.cars

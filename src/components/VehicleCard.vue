@@ -1,15 +1,19 @@
 <template>
   <div class="card-wrapper">
     <div class="card-header">
-        <span class="card-title">
-            {{ car.Year }}
-            {{ car.Make }}<br/>
-            {{ car.Model }}
-        </span>
+        <router-link :to="{name: 'VehiclePage', params: {carMake: car.Make, carModel: car.Model, stockNumber: car.StockNumber},}">
+            <span class="card-title">
+                {{ car.Year }}
+                {{ car.Make }}<br/>
+                {{ car.Model }}
+            </span>
+        </router-link>
         <span class="card-price">{{ car.Price | currency('$', 0) }}</span>
     </div>
     <div class="hero-image">
-        <img :src="'/stock/images/' + car.StockNumber + '_1.jpg'" width="100%" />
+        <router-link :to="{name: 'VehiclePage', params: {carMake: car.Make, carModel: car.Model, stockNumber: car.StockNumber},}">
+            <img :src="'/stock/images/' + car.StockNumber + '_1.jpg'" width="100%" />
+        </router-link>
     </div>
     <div class="card-bullet-wrapper">
         <dl class="bullets">
@@ -28,9 +32,11 @@
         </dl>
     </div>
     <div class="read-more">
-        <button class="cta-button">
-            Read More >>
-        </button>
+        <router-link :to="{name: 'VehiclePage', params: {carMake: car.Make, carModel: car.Model, stockNumber: car.StockNumber},}">
+            <button class="cta-button">
+                Read More >>
+            </button>
+        </router-link>
     </div>
   </div>
 </template>

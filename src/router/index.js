@@ -21,6 +21,13 @@ const routes = [
     path: "/Inventory",
     name: "Inventory",
     component: Inventory
+  },
+  {
+    path: "/VehiclePage/:carMake/:carModel/:stockNumber",
+    name: "VehiclePage",
+    props: true,
+    component: () =>
+      import ('../views/VehiclePage.vue')
   }
   // {
   //   path: "/about",
