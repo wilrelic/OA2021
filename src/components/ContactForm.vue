@@ -1,12 +1,13 @@
 <template>
-    <div class="container">
+    <div class="form-container">
+        <span class="contact-title">Send us a message...</span>
         <form class="contact-form" @submit.prevent="sendEmail">
             <label>Name</label>
-            <input type="text" name="user_name" v-model="custName" autocomplete="off">
+            <input type="text" name="user_name" v-model="custName" autocomplete="off" placeholder="Your full name">
             <label>Email</label>
-            <input type="email" name="user_email" v-model="custEmail" autocomplete="off">
+            <input type="email" name="user_email" v-model="custEmail" autocomplete="off" placeholder="Your email address">
             <label>Message</label>
-            <textarea name="message" v-model="custMessage" autocomplete="off"></textarea>
+            <textarea name="message" v-model="custMessage" autocomplete="off" placeholder="Write us a message and someone will get back to you as soon as possible..."></textarea>
             <button class="cta-button" id="btn-fin">
                 <span id="sendText">Send</span>
                 <span id="thanksText">Thankyou!</span>
@@ -80,23 +81,27 @@ export default {
         align-items: center;
     }
 
-    .container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+    .contact-title {
+        font-size: x-large;
+        font-weight: 600;
         color: $light;
-        margin: auto;
-        max-width: 300px;
-        background: rgba($color: #000000, $alpha: .5);
-        border-radius: 4px;
+    }
+
+    .form-container {
+        margin: 0 auto;
+        max-width: 400px;
+        color: $light;
+        background: rgba($color: #000000, $alpha: .7);
+        border-radius: 8px;
         box-shadow: 2px 2px 2px grey;
-        border: 1px solid $primary;
-        padding: 0px 10px;
+        border: 2px solid $primary;
+        padding: 10px 10px;
     }
 
     .contact-form {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     input, textarea {
@@ -105,6 +110,7 @@ export default {
         border-radius: 4px;
         color: $light;
         background: rgba($color: #000000, $alpha: .5);
+        border: 1px solid $light;
     }
 
     input:focus, input:focus-within, textarea:focus, textarea:focus-within {

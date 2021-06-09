@@ -61,6 +61,7 @@ export default {
       locations: "ROCKINGHAM & MANDURAH",
       title: "USED CARS FOR SALE",
       subtitle: "Find Used Cars, Vans, 4x4s, SUVs & Commercials at incredibly low prices",
+      toggle: true
     };
   }
 };

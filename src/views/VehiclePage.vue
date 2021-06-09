@@ -1,15 +1,23 @@
 <template>
     <div class="container">
         <div class="page-card">
-            <h1>Sort out data through to here.</h1>
+            <VehicleCard />
         </div>
     </div>
 </template>
 
 <script>
+import VehicleCard from "@/components/VehicleCard.vue"
 export default {
     name: 'VehiclePage',
-    props: ['car']
+    components: {
+            VehicleCard
+        },
+    data() {
+        return {
+            
+        }
+    }
 }
 </script>
 

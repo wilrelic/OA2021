@@ -1,17 +1,23 @@
 <template>
   <footer>
-    Contact Us <span class="orangeText">|</span> Privacy Policy<br />
+    <span class="contact-link">Contact Us</span> <span class="orangeText">|</span> Privacy Policy<br />
     <span class="orangeText">&copy;</span> <strong><em>DRIVEN</em></strong> Auto
     Group <span class="orangeText">|</span> All Rights Reserved
     <span class="orangeText">|</span> ABN: 20150264127<br />
     MD: 22325 <span class="orangeText">|</span> AU: 41689
     <span class="orangeText">|</span> MRB: 5353
+    
   </footer>
 </template>
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
+  data () {
+    return {
+    
+    }
+  }
 };
 </script>
 
@@ -31,4 +37,14 @@ footer {
   font-family: "Gotham", sans-serif;
   line-height: 18px;
 }
+
+.contact-link {
+  cursor: pointer;
+  color: $light;
+}
+
+.contact-link:hover {
+    color: $primary;
+  }
+
 </style>

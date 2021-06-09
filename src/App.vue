@@ -2,6 +2,7 @@
   <div id="app">
     <Header />
     <router-view />
+    <ContactForm v-show="toggle" />
     <Footer />
   </div>
 </template>
@@ -9,10 +10,17 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import ContactForm from "@/components/ContactForm.vue";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
+    ContactForm
+  },
+  data () {
+    return {
+      toggle: false
+    }
   }
 };
 </script>
@@ -131,6 +139,7 @@ p {
   text-align: justify;
   font-size: 0.8rem;
   line-height: 1.4em;
+  font-weight: 600;
 }
 
 .orangeText {

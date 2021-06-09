@@ -3,6 +3,10 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Finance from "../views/Finance.vue";
 import Inventory from "../views/Inventory.vue";
+import Warranty from "../views/Warranty.vue";
+import Careers from "../views/Careers.vue";
+import Locations from "../views/Locations.vue";
+import Contact from "../views/Contact.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +25,26 @@ const routes = [
     path: "/Inventory",
     name: "Inventory",
     component: Inventory
+  },
+  {
+    path: "/Warranty",
+    name: "Warranty",
+    component: Warranty
+  },
+  {
+    path: "/Careers",
+    name: "Careers",
+    component: Careers
+  },
+  {
+    path: "/Locations",
+    name: "Locations",
+    component: Locations
+  },
+  {
+    path: "/Contact",
+    name: "Contact",
+    component: Contact
   },
   {
     path: "/VehiclePage/:carMake/:carModel/:stockNumber",

@@ -87,6 +87,8 @@ export default {
     .card-grid {
         display: flex;
         flex-wrap: wrap;
+        max-width: 1024px;
+        margin: 0 auto;
         margin-top: 10px;
     }
 
